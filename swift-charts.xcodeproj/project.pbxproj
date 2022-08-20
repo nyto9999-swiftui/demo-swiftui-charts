@@ -11,9 +11,8 @@
 		8D158D4E28AF93E400EA4407 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D158D4D28AF93E400EA4407 /* ContentView.swift */; };
 		8D158D5028AF93E700EA4407 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D158D4F28AF93E700EA4407 /* Assets.xcassets */; };
 		8D158D5328AF93E700EA4407 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D158D5228AF93E700EA4407 /* Preview Assets.xcassets */; };
-		8D36030A28AFB06F00FC5A7C /* online-retail.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 8D36030928AFB06F00FC5A7C /* online-retail.xlsx */; };
-		8D36031228B0873F00FC5A7C /* CoreXLSX in Frameworks */ = {isa = PBXBuildFile; productRef = 8D36031128B0873F00FC5A7C /* CoreXLSX */; };
 		8D36031428B08B8100FC5A7C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D36031328B08B8100FC5A7C /* Model.swift */; };
+		8D36031828B0B38F00FC5A7C /* online-retail.csv in Resources */ = {isa = PBXBuildFile; fileRef = 8D36031728B0B38F00FC5A7C /* online-retail.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,8 +21,8 @@
 		8D158D4D28AF93E400EA4407 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = "swift-charts/ContentView.swift"; sourceTree = SOURCE_ROOT; };
 		8D158D4F28AF93E700EA4407 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D158D5228AF93E700EA4407 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		8D36030928AFB06F00FC5A7C /* online-retail.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "online-retail.xlsx"; sourceTree = "<group>"; };
 		8D36031328B08B8100FC5A7C /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		8D36031728B0B38F00FC5A7C /* online-retail.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "online-retail.csv"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,7 +30,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D36031228B0873F00FC5A7C /* CoreXLSX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,11 +55,11 @@
 		8D158D4A28AF93E400EA4407 /* swift-charts */ = {
 			isa = PBXGroup;
 			children = (
+				8D36031728B0B38F00FC5A7C /* online-retail.csv */,
 				8D36031328B08B8100FC5A7C /* Model.swift */,
 				8D158D4B28AF93E400EA4407 /* swift_chartsApp.swift */,
 				8D158D4D28AF93E400EA4407 /* ContentView.swift */,
 				8D158D4F28AF93E700EA4407 /* Assets.xcassets */,
-				8D36030928AFB06F00FC5A7C /* online-retail.xlsx */,
 				8D158D5128AF93E700EA4407 /* Preview Content */,
 			);
 			path = "swift-charts";
@@ -92,7 +90,6 @@
 			);
 			name = "swift-charts";
 			packageProductDependencies = (
-				8D36031128B0873F00FC5A7C /* CoreXLSX */,
 			);
 			productName = "swift-charts";
 			productReference = 8D158D4828AF93E400EA4407 /* swift-charts.app */;
@@ -123,7 +120,6 @@
 			);
 			mainGroup = 8D158D3F28AF93E400EA4407;
 			packageReferences = (
-				8D36031028B0873F00FC5A7C /* XCRemoteSwiftPackageReference "CoreXLSX" */,
 			);
 			productRefGroup = 8D158D4928AF93E400EA4407 /* Products */;
 			projectDirPath = "";
@@ -139,7 +135,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D36030A28AFB06F00FC5A7C /* online-retail.xlsx in Resources */,
+				8D36031828B0B38F00FC5A7C /* online-retail.csv in Resources */,
 				8D158D5328AF93E700EA4407 /* Preview Assets.xcassets in Resources */,
 				8D158D5028AF93E700EA4407 /* Assets.xcassets in Resources */,
 			);
@@ -355,25 +351,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		8D36031028B0873F00FC5A7C /* XCRemoteSwiftPackageReference "CoreXLSX" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/CoreOffice/CoreXLSX.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.9.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		8D36031128B0873F00FC5A7C /* CoreXLSX */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8D36031028B0873F00FC5A7C /* XCRemoteSwiftPackageReference "CoreXLSX" */;
-			productName = CoreXLSX;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8D158D4028AF93E400EA4407 /* Project object */;
 }

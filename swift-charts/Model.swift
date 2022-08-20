@@ -1,27 +1,63 @@
 import Foundation
-import CoreXLSX
 
-class Model: ObservableObject {
-  var file: XLSXFile
-  @Published var text = "123"
+class ChartModel: ObservableObject {
+  @Published var retails = [Retail]()
   
-  init() {
-    let bundle = Bundle.main.path(forResource: "online-retail", ofType: "xlsx")
-    let file = XLSXFile(filepath: bundle!, bufferSize: UInt32.max, errorContextLength: UInt.max)!
-    self.file = file
+  init(csvName: String) {
+    self.retails = loadCSV(from: csvName)
+  }
+}
+
+struct Retail: Identifiable {
+  var id = UUID()
+  
+  var InvoiceNo: String = ""
+  var StockCode: String = ""
+  var Description: String = ""
+  var Quantity: String = ""
+  var InvoiceDate: String = ""
+  var UnitPrice: String = ""
+  var CustomerID: String = ""
+  var Country: String = ""
+  
+  init(raw: [String]) {
+    InvoiceNo = raw[0]
+    StockCode = raw[1]
+    Description = raw[2]
+    Quantity = raw[3]
+    InvoiceDate = raw[4]
+    UnitPrice = raw[5]
+    CustomerID = raw[6]
+    Country = raw[7]
+  }
+}
+
+func loadCSV(from csvName: String) -> [Retail] {
+  var csvToStruct = [Retail]()
+  
+  guard let filePath = Bundle.main.path(forResource: csvName, ofType: "csv") else { return [] }
+
+  var data = ""
+  do {
+    data = try String(contentsOfFile: filePath)
+  }
+  catch {
+    print(error)
+    return []
   }
   
-  func parseSheet() {
-    self.text = "123"
-    DispatchQueue.global(qos: .background).async {
-      let sharedStrings = try! self.file.parseSharedStrings()
-      let columnCString = try! self.file.cellsInWorksheet(at: "xl/worksheets/sheet1.xml", rows: [1])
-      print(columnCString)
-      
-//      let items = try! self.file.parseWorksheet(at: "xl/worksheets/sheet1.xml")
-//      print(items)
+  var rows = data.components(separatedBy: "\n")
+  
+  let columnCount = rows.first?.components(separatedBy: ",").count
+  rows.removeFirst()
+  
+  for row in rows {
+    let csvColumns = row.components(separatedBy: ",")
+    if csvColumns.count == columnCount {
+      let retailStruct = Retail.init(raw: csvColumns)
+      csvToStruct.append(retailStruct)
     }
-    
   }
-  
+   
+  return csvToStruct
 }

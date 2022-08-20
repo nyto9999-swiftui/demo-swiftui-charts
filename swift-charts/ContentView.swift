@@ -1,19 +1,13 @@
 import SwiftUI
-import CoreXLSX
 
 struct ContentView: View {
+  @ObservedObject var model = ChartModel(csvName: "online-retail")
   
-  @ObservedObject var model: Model = Model()
-   
   var body: some View {
-    Text("\(model.text)")
-      .padding()
-    Text("\(model.text)").onAppear {
+    Text(model.retails[2].Description)
       
-      model.parseSheet()
     }
   }
-}
 
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
