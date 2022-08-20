@@ -1,10 +1,10 @@
 import Foundation
 
 class ChartModel: ObservableObject {
-  @Published var retails = [Retail]()
-  
-  init(csvName: String) {
-    self.retails = loadCSV(from: csvName)
+  var retails = [Retail]()
+   
+  init(retails: [Retail] = loadCSV(from: "online-retail")) {
+    self.retails = retails
   }
 }
 
@@ -31,6 +31,7 @@ struct Retail: Identifiable {
     Country = raw[7]
   }
 }
+
 
 func loadCSV(from csvName: String) -> [Retail] {
   var csvToStruct = [Retail]()
