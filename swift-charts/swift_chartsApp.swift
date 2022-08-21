@@ -1,13 +1,14 @@
 import SwiftUI
+import CoreData
 
 @main
 struct swift_chartsApp: App {
-  @StateObject var model = ChartModel()
+  let context = CoreDataStack(modelName: "model").managedContext
   
     var body: some Scene {
         WindowGroup {
           ContentView()
-            .environmentObject(model)
+            .environment(\.managedObjectContext, context)
         }
     }
 }
