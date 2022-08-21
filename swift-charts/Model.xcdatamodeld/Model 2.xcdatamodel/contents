@@ -2,16 +2,16 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21277" systemVersion="21G83" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Invoice" representedClassName=".Invoice" syncable="YES">
         <attribute name="country" optional="YES" attributeType="String"/>
-        <attribute name="customerID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="invoiceDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="invoiceNo" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="customerID" optional="YES" attributeType="String"/>
+        <attribute name="invoiceDate" optional="YES" attributeType="String"/>
+        <attribute name="invoiceNo" optional="YES" attributeType="String"/>
         <relationship name="retails" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Retail" inverseName="invoice" inverseEntity="Retail"/>
     </entity>
     <entity name="Retail" representedClassName=".Retail" syncable="YES">
         <attribute name="desc" optional="YES" attributeType="String"/>
-        <attribute name="quantity" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="quantity" optional="YES" attributeType="String"/>
         <attribute name="stockCode" optional="YES" attributeType="String"/>
-        <attribute name="unitPrice" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="unitPrice" optional="YES" attributeType="String"/>
         <relationship name="invoice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Invoice" inverseName="retails" inverseEntity="Invoice"/>
     </entity>
 </model>

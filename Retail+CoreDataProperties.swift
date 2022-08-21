@@ -17,9 +17,9 @@ extension Retail {
     }
 
     @NSManaged public var desc: String?
-    @NSManaged public var quantity: Int16
+    @NSManaged public var quantity: String?
     @NSManaged public var stockCode: String?
-    @NSManaged public var unitPrice: Float
+    @NSManaged public var unitPrice: String?
     @NSManaged public var invoice: Invoice?
 
 }

@@ -4,7 +4,7 @@ import CoreData
 import SwiftUI
 
 class RetailModel: ObservableObject {
-  let moc = CoreDataStack.shared.context
+  @Environment(\.managedObjectContext) var moc
   var progress = PassthroughSubject<Void, Never>()
   
   let filename: String
@@ -22,31 +22,34 @@ class RetailModel: ObservableObject {
       
       let row = line.components(separatedBy: "\n")[0]
       let values = row.components(separatedBy: ",")
-        
+      
       let invoice = Invoice(context: moc)
       invoice.country = values[7]
-      invoice.customerID = Int16(values[6]) ?? 0
-      invoice.invoiceDate = convertDate(from: values[4] ?? "")
-      invoice.invoiceNo = Int32(values[0]) ?? 0
+      invoice.customerID = values[6]
+      invoice.invoiceDate = values[4]
+
+      invoice.invoiceNo = values[0]
       
       let retail = Retail(context: moc)
       retail.stockCode = values[1]
       retail.desc = values[2]
-      retail.quantity = Int16(values[3]) ?? 0
-      retail.unitPrice = Float(values[5]) ?? 0
+      retail.quantity = values[3]
+      retail.unitPrice = values[5]
        
       if let retails = invoice.retails?.mutableCopy() as? NSMutableOrderedSet {
         retails.add(invoice)
-        
       }
-      do {
-        try moc.save()
-        print("work")
-      }
-      catch let error as NSError {
-      print("Unresolved error \(error), \(error.userInfo)")
-      }
+      
       await MainActor.run {
+        do {
+          print(invoice)
+          print(retail)
+          try moc.save()
+          
+        }
+        catch let error as NSError {
+        print("Unresolved error \(error), \(error.userInfo)")
+        }
         self.progress.send()
       }
     }

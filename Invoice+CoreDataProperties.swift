@@ -17,9 +17,9 @@ extension Invoice {
     }
 
     @NSManaged public var country: String?
-    @NSManaged public var customerID: Int16
-    @NSManaged public var invoiceDate: Date?
-    @NSManaged public var invoiceNo: Int32
+    @NSManaged public var customerID: String?
+    @NSManaged public var invoiceDate: String?
+    @NSManaged public var invoiceNo: String?
     @NSManaged public var retails: NSOrderedSet?
 
 }

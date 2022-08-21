@@ -3,18 +3,18 @@ import CoreData
 
 public class CoreDataStack {
   
-  static let shared = CoreDataStack()
+  static let shared = CoreDataStack(model: "ModelV2")
   
-  private let modelName: String
+  private let modelName:String
   
   lazy var context: NSManagedObjectContext = {
     return self.storeContainer.viewContext
   }()
   
-  init() {
-    self.modelName = "Model"
+  init(model: String) {
+    self.modelName = model
   }
-  
+   
   private lazy var storeContainer: NSPersistentContainer = {
     let container = NSPersistentContainer(name: self.modelName)
     container.loadPersistentStores { _, error in
