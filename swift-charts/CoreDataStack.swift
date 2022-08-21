@@ -2,14 +2,17 @@ import Foundation
 import CoreData
 
 public class CoreDataStack {
+  
+  static let shared = CoreDataStack()
+  
   private let modelName: String
   
-  lazy var managedContext: NSManagedObjectContext = {
+  lazy var context: NSManagedObjectContext = {
     return self.storeContainer.viewContext
   }()
   
-  init(modelName: String) {
-    self.modelName = modelName
+  init() {
+    self.modelName = "Model"
   }
   
   private lazy var storeContainer: NSPersistentContainer = {
@@ -23,9 +26,9 @@ public class CoreDataStack {
   }()
   
   func saveContext() {
-    guard managedContext.hasChanges else { return }
+    guard context.hasChanges else { return }
     do {
-      try managedContext.save()
+      try context.save()
     } catch let error as NSError {
       print("Unresolved error \(error), \(error.userInfo)")
     }

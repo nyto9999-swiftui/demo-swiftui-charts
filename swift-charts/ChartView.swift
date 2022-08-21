@@ -33,7 +33,7 @@ struct ChartView: View {
     
       .task {
         do {
-          try await model.getRetails()
+          try await model.readCoreData()
         } catch let error {
           print(error.localizedDescription)
         }
