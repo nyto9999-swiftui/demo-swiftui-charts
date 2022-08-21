@@ -14,12 +14,14 @@
 		8D36031428B08B8100FC5A7C /* RetailAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D36031328B08B8100FC5A7C /* RetailAPI.swift */; };
 		8D36031828B0B38F00FC5A7C /* online-retail.csv in Resources */ = {isa = PBXBuildFile; fileRef = 8D36031728B0B38F00FC5A7C /* online-retail.csv */; };
 		8D4A869E28B0E1040061E5DC /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A869D28B0E1040061E5DC /* ChartView.swift */; };
-		8D4A86A128B110F80061E5DC /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A869F28B110F80061E5DC /* Model.xcdatamodeld */; };
 		8D4A86A328B219800061E5DC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A86A228B219800061E5DC /* CoreDataStack.swift */; };
-		8D4A86A828B21F020061E5DC /* Retail+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A86A428B21F020061E5DC /* Retail+CoreDataClass.swift */; };
-		8D4A86A928B21F020061E5DC /* Retail+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A86A528B21F020061E5DC /* Retail+CoreDataProperties.swift */; };
-		8D4A86AA28B21F020061E5DC /* Invoice+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A86A628B21F020061E5DC /* Invoice+CoreDataClass.swift */; };
-		8D4A86AB28B21F020061E5DC /* Invoice+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A86A728B21F020061E5DC /* Invoice+CoreDataProperties.swift */; };
+		8D736DAB28B2712F0067E738 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D736DA828B2712F0067E738 /* Model.xcdatamodeld */; };
+		8DE8A8BC28B28F5900B898E1 /* Retail+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE8A8B628B28F5900B898E1 /* Retail+CoreDataClass.swift */; };
+		8DE8A8BD28B28F5900B898E1 /* Retail+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE8A8B728B28F5900B898E1 /* Retail+CoreDataProperties.swift */; };
+		8DE8A8BE28B28F5900B898E1 /* Customer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE8A8B828B28F5900B898E1 /* Customer+CoreDataClass.swift */; };
+		8DE8A8BF28B28F5900B898E1 /* Customer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE8A8B928B28F5900B898E1 /* Customer+CoreDataProperties.swift */; };
+		8DE8A8C028B28F5900B898E1 /* Invoice+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE8A8BA28B28F5900B898E1 /* Invoice+CoreDataClass.swift */; };
+		8DE8A8C128B28F5900B898E1 /* Invoice+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE8A8BB28B28F5900B898E1 /* Invoice+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,14 +33,16 @@
 		8D36031328B08B8100FC5A7C /* RetailAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailAPI.swift; sourceTree = "<group>"; };
 		8D36031728B0B38F00FC5A7C /* online-retail.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "online-retail.csv"; sourceTree = "<group>"; };
 		8D4A869D28B0E1040061E5DC /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
-		8D4A86A028B110F80061E5DC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		8D4A86A228B219800061E5DC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		8D4A86A428B21F020061E5DC /* Retail+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Retail+CoreDataClass.swift"; sourceTree = "<group>"; };
-		8D4A86A528B21F020061E5DC /* Retail+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Retail+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		8D4A86A628B21F020061E5DC /* Invoice+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Invoice+CoreDataClass.swift"; sourceTree = "<group>"; };
-		8D4A86A728B21F020061E5DC /* Invoice+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Invoice+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		8D4A86AC28B2604D0061E5DC /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
-		8D59B9CC28B2677B0034CA5C /* ModelV2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ModelV2.xcdatamodel; sourceTree = "<group>"; };
+		8D736DA928B2712F0067E738 /* ModelV2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ModelV2.xcdatamodel; sourceTree = "<group>"; };
+		8D736DAA28B2712F0067E738 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		8DE8A8B528B28E9800B898E1 /* ModelV3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ModelV3.xcdatamodel; sourceTree = "<group>"; };
+		8DE8A8B628B28F5900B898E1 /* Retail+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Retail+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8DE8A8B728B28F5900B898E1 /* Retail+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Retail+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8DE8A8B828B28F5900B898E1 /* Customer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Customer+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8DE8A8B928B28F5900B898E1 /* Customer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Customer+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8DE8A8BA28B28F5900B898E1 /* Invoice+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Invoice+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8DE8A8BB28B28F5900B898E1 /* Invoice+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Invoice+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +59,12 @@
 		8D158D3F28AF93E400EA4407 = {
 			isa = PBXGroup;
 			children = (
-				8D4A86A428B21F020061E5DC /* Retail+CoreDataClass.swift */,
-				8D4A86A528B21F020061E5DC /* Retail+CoreDataProperties.swift */,
-				8D4A86A628B21F020061E5DC /* Invoice+CoreDataClass.swift */,
-				8D4A86A728B21F020061E5DC /* Invoice+CoreDataProperties.swift */,
+				8DE8A8B628B28F5900B898E1 /* Retail+CoreDataClass.swift */,
+				8DE8A8B728B28F5900B898E1 /* Retail+CoreDataProperties.swift */,
+				8DE8A8B828B28F5900B898E1 /* Customer+CoreDataClass.swift */,
+				8DE8A8B928B28F5900B898E1 /* Customer+CoreDataProperties.swift */,
+				8DE8A8BA28B28F5900B898E1 /* Invoice+CoreDataClass.swift */,
+				8DE8A8BB28B28F5900B898E1 /* Invoice+CoreDataProperties.swift */,
 				8D158D4A28AF93E400EA4407 /* swift-charts */,
 				8D158D4928AF93E400EA4407 /* Products */,
 			);
@@ -81,9 +87,9 @@
 				8D158D4D28AF93E400EA4407 /* ContentView.swift */,
 				8D4A869D28B0E1040061E5DC /* ChartView.swift */,
 				8D4A86A228B219800061E5DC /* CoreDataStack.swift */,
-				8D4A869F28B110F80061E5DC /* Model.xcdatamodeld */,
 				8D158D4F28AF93E700EA4407 /* Assets.xcassets */,
 				8D158D5128AF93E700EA4407 /* Preview Content */,
+				8D736DA828B2712F0067E738 /* Model.xcdatamodeld */,
 			);
 			path = "swift-charts";
 			sourceTree = "<group>";
@@ -172,15 +178,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D36031428B08B8100FC5A7C /* RetailAPI.swift in Sources */,
-				8D4A86AA28B21F020061E5DC /* Invoice+CoreDataClass.swift in Sources */,
+				8DE8A8BF28B28F5900B898E1 /* Customer+CoreDataProperties.swift in Sources */,
 				8D158D4E28AF93E400EA4407 /* ContentView.swift in Sources */,
-				8D4A86A828B21F020061E5DC /* Retail+CoreDataClass.swift in Sources */,
-				8D4A86A128B110F80061E5DC /* Model.xcdatamodeld in Sources */,
+				8DE8A8BC28B28F5900B898E1 /* Retail+CoreDataClass.swift in Sources */,
+				8DE8A8BE28B28F5900B898E1 /* Customer+CoreDataClass.swift in Sources */,
 				8D4A86A328B219800061E5DC /* CoreDataStack.swift in Sources */,
+				8DE8A8C128B28F5900B898E1 /* Invoice+CoreDataProperties.swift in Sources */,
 				8D158D4C28AF93E400EA4407 /* swift_chartsApp.swift in Sources */,
-				8D4A86A928B21F020061E5DC /* Retail+CoreDataProperties.swift in Sources */,
-				8D4A86AB28B21F020061E5DC /* Invoice+CoreDataProperties.swift in Sources */,
 				8D4A869E28B0E1040061E5DC /* ChartView.swift in Sources */,
+				8DE8A8BD28B28F5900B898E1 /* Retail+CoreDataProperties.swift in Sources */,
+				8DE8A8C028B28F5900B898E1 /* Invoice+CoreDataClass.swift in Sources */,
+				8D736DAB28B2712F0067E738 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,14 +393,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		8D4A869F28B110F80061E5DC /* Model.xcdatamodeld */ = {
+		8D736DA828B2712F0067E738 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				8D59B9CC28B2677B0034CA5C /* ModelV2.xcdatamodel */,
-				8D4A86AC28B2604D0061E5DC /* Model 2.xcdatamodel */,
-				8D4A86A028B110F80061E5DC /* Model.xcdatamodel */,
+				8DE8A8B528B28E9800B898E1 /* ModelV3.xcdatamodel */,
+				8D736DA928B2712F0067E738 /* ModelV2.xcdatamodel */,
+				8D736DAA28B2712F0067E738 /* Model.xcdatamodel */,
 			);
-			currentVersion = 8D59B9CC28B2677B0034CA5C /* ModelV2.xcdatamodel */;
+			currentVersion = 8DE8A8B528B28E9800B898E1 /* ModelV3.xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -2,21 +2,24 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21277" systemVersion="21G83" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Customer" representedClassName=".Customer" syncable="YES">
         <attribute name="country" optional="YES" attributeType="String"/>
-        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="customerNo" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="customerToInvoice" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Invoice" inverseName="invoiceToCustomer" inverseEntity="Invoice"/>
         <relationship name="customerToRetail" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Retail" inverseName="retailToCustomer" inverseEntity="Retail"/>
     </entity>
     <entity name="Invoice" representedClassName=".Invoice" syncable="YES">
         <attribute name="date" optional="YES" attributeType="String"/>
-        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="invoiceNo" optional="YES" attributeType="String"/>
         <relationship name="invoiceToCustomer" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Customer" inverseName="customerToInvoice" inverseEntity="Customer"/>
         <relationship name="retails" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Retail" inverseName="invoice" inverseEntity="Retail"/>
     </entity>
     <entity name="Retail" representedClassName=".Retail" syncable="YES">
         <attribute name="desc" optional="YES" attributeType="String"/>
-        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="price" optional="YES" attributeType="String"/>
         <attribute name="quantity" optional="YES" attributeType="String"/>
+        <attribute name="retailNo" optional="YES" attributeType="String"/>
         <relationship name="invoice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Invoice" inverseName="retails" inverseEntity="Invoice"/>
         <relationship name="retailToCustomer" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Customer" inverseName="customerToRetail" inverseEntity="Customer"/>
     </entity>

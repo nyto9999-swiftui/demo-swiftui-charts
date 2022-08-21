@@ -3,7 +3,7 @@ import CoreData
 
 public class CoreDataStack {
   
-  static let shared = CoreDataStack(model: "ModelV2")
+  static let shared = CoreDataStack(model: "Model")
   
   private let modelName:String
   

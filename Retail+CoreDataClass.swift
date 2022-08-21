@@ -2,14 +2,14 @@
 //  Retail+CoreDataClass.swift
 //  swift-charts
 //
-//  Created by 宇宣 Chen on 2022/8/21.
+//  Created by 宇宣 Chen on 2022/8/22.
 //
 //
 
 import Foundation
 import CoreData
 
-@objc(Retail)
+
 public class Retail: NSManagedObject {
 
 }

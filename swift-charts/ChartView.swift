@@ -21,7 +21,6 @@ struct ChartView: View {
         .accentColor(Color.orange)
         .scaleEffect(x: 1, y: 4, anchor: .center)
         .padding(15)
-      
     }
     
     //    .onAppear {

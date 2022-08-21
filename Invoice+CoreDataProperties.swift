@@ -2,7 +2,7 @@
 //  Invoice+CoreDataProperties.swift
 //  swift-charts
 //
-//  Created by 宇宣 Chen on 2022/8/21.
+//  Created by 宇宣 Chen on 2022/8/22.
 //
 //
 
@@ -16,34 +16,33 @@ extension Invoice {
         return NSFetchRequest<Invoice>(entityName: "Invoice")
     }
 
-    @NSManaged public var country: String?
-    @NSManaged public var customerID: String?
-    @NSManaged public var invoiceDate: String?
+    @NSManaged public var date: String?
+    @NSManaged public var id: UUID?
     @NSManaged public var invoiceNo: String?
-    @NSManaged public var retails: NSOrderedSet?
+    @NSManaged public var invoiceToCustomer: NSSet?
+    @NSManaged public var retails: NSSet?
+
+}
+
+// MARK: Generated accessors for invoiceToCustomer
+extension Invoice {
+
+    @objc(addInvoiceToCustomerObject:)
+    @NSManaged public func addToInvoiceToCustomer(_ value: Customer)
+
+    @objc(removeInvoiceToCustomerObject:)
+    @NSManaged public func removeFromInvoiceToCustomer(_ value: Customer)
+
+    @objc(addInvoiceToCustomer:)
+    @NSManaged public func addToInvoiceToCustomer(_ values: NSSet)
+
+    @objc(removeInvoiceToCustomer:)
+    @NSManaged public func removeFromInvoiceToCustomer(_ values: NSSet)
 
 }
 
 // MARK: Generated accessors for retails
 extension Invoice {
-
-    @objc(insertObject:inRetailsAtIndex:)
-    @NSManaged public func insertIntoRetails(_ value: Retail, at idx: Int)
-
-    @objc(removeObjectFromRetailsAtIndex:)
-    @NSManaged public func removeFromRetails(at idx: Int)
-
-    @objc(insertRetails:atIndexes:)
-    @NSManaged public func insertIntoRetails(_ values: [Retail], at indexes: NSIndexSet)
-
-    @objc(removeRetailsAtIndexes:)
-    @NSManaged public func removeFromRetails(at indexes: NSIndexSet)
-
-    @objc(replaceObjectInRetailsAtIndex:withObject:)
-    @NSManaged public func replaceRetails(at idx: Int, with value: Retail)
-
-    @objc(replaceRetailsAtIndexes:withRetails:)
-    @NSManaged public func replaceRetails(at indexes: NSIndexSet, with values: [Retail])
 
     @objc(addRetailsObject:)
     @NSManaged public func addToRetails(_ value: Retail)
@@ -52,10 +51,10 @@ extension Invoice {
     @NSManaged public func removeFromRetails(_ value: Retail)
 
     @objc(addRetails:)
-    @NSManaged public func addToRetails(_ values: NSOrderedSet)
+    @NSManaged public func addToRetails(_ values: NSSet)
 
     @objc(removeRetails:)
-    @NSManaged public func removeFromRetails(_ values: NSOrderedSet)
+    @NSManaged public func removeFromRetails(_ values: NSSet)
 
 }
 
