@@ -9,4 +9,4 @@
 
 I was planning to use Swift chart which is available for iOS 16 beta, it seems like I have to change my choice, because simulator cannot run concurrenctly.
 
-Therefore, trying to draw google some apple chart api tmr. sleep sleep
+Therefore, trying to draw chart by using old chart api tmr. sleep sleep
