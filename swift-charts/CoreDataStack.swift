@@ -6,9 +6,7 @@ public class CoreDataStack {
   static let shared = CoreDataStack(model: "Model")
   
   private let modelName:String
-  var fetchRequest: NSFetchRequest<Invoice>?
-  var invoiceList: [Invoice] = []
-  
+   
   lazy var context: NSManagedObjectContext = {
     return self.storeContainer.viewContext
   }()
@@ -16,7 +14,17 @@ public class CoreDataStack {
   init(model: String) {
     self.modelName = model
   }
-   
+  
+  func invoicesCount() -> Int {
+    let fetchInvoices: NSFetchRequest<Invoice> = Invoice.fetchRequest()
+    do {
+      return try context.count(for: fetchInvoices)
+    }
+    catch {
+      return 0
+    }
+  }
+
   private var storeContainer: NSPersistentContainer = {
     let container = NSPersistentContainer(name: "Model")
     print(container.persistentStoreDescriptions.first?.url! ?? "")
@@ -36,5 +44,4 @@ public class CoreDataStack {
       print("Unresolved error \(error), \(error.userInfo)")
     }
   }
-  
 }

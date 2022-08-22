@@ -5,6 +5,7 @@ import SwiftUI
 
 
 class RetailModel: ObservableObject {
+  let moc = CoreDataStack.shared.context
   var progress = PassthroughSubject<Void, Never>()
   
   let filename: String
@@ -15,13 +16,9 @@ class RetailModel: ObservableObject {
     self.url = Bundle.main.url(forResource: filename, withExtension: "csv")!
   }
   
-  //heavy work here
-  func readCoreData() async throws {
-    
+  // 4 min 51 sec
+  func ayncSequence() async throws {
     for try await line in url.lines {
-      
-      let moc = CoreDataStack.shared.context
-      
       let row = line.components(separatedBy: "\n")[0]
       let values = row.components(separatedBy: ",")
       
@@ -46,6 +43,86 @@ class RetailModel: ObservableObject {
           catch let error as NSError {
             print("Unresolved error \(error), \(error.userInfo)")
           }
+        }
+      }
+    }
+  }
+  func test() {
+    print("invoices.count")
+  }
+  //3 mins 51 sec
+  func ayncStreamPull() async {
+    var iterator = url.lines.makeAsyncIterator()
+    let stream = AsyncStream<[String]> {
+      do {
+        if let line = try await iterator.next(), !line.isEmpty {
+          let row = line.components(separatedBy: "\n")[0]
+          let values = row.components(separatedBy: ",")
+          return values
+        }
+      } catch let error {
+        print(error.localizedDescription)
+      }
+      return nil
+    }
+   
+    for await values in stream {
+      await MainActor.run {
+        if values.count == 8
+        {
+          let invoice = Invoice(context: moc)
+          invoice.invoiceNo = values[0]
+          invoice.retailNo = values[1]
+          invoice.desc = values[2]
+          invoice.quantity = values[3]
+          invoice.date = values[4]
+          invoice.price = values[5]
+          invoice.customerNo = values[6]
+          invoice.country = values[7]
+        }
+        do {
+          try moc.save()
+          self.progress.send()
+        } catch let error {
+          print(error.localizedDescription)
+        }
+      }
+    }
+  }
+  
+  // 4 min 4 sec
+  func ayncStreamPush() async {
+    let stream = AsyncStream<[String]> { continuation in
+      Task {
+        for try await line in url.lines {
+          let row = line.components(separatedBy: "\n")[0]
+          let values = row.components(separatedBy: ",")
+          continuation.yield(values)
+        }
+        continuation.finish()
+      }
+    }
+    
+    for await values in stream {
+      await MainActor.run {
+        if values.count == 8
+        {
+          let invoice = Invoice(context: moc)
+          invoice.invoiceNo = values[0]
+          invoice.retailNo = values[1]
+          invoice.desc = values[2]
+          invoice.quantity = values[3]
+          invoice.date = values[4]
+          invoice.price = values[5]
+          invoice.customerNo = values[6]
+          invoice.country = values[7]
+        }
+        do {
+          try moc.save()
+          self.progress.send()
+        } catch let error {
+          
+          print(error.localizedDescription)
         }
       }
     }
