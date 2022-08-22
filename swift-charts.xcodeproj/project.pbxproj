@@ -16,12 +16,8 @@
 		8D4A869E28B0E1040061E5DC /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A869D28B0E1040061E5DC /* ChartView.swift */; };
 		8D4A86A328B219800061E5DC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A86A228B219800061E5DC /* CoreDataStack.swift */; };
 		8D736DAB28B2712F0067E738 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D736DA828B2712F0067E738 /* Model.xcdatamodeld */; };
-		8DE8A8BC28B28F5900B898E1 /* Retail+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE8A8B628B28F5900B898E1 /* Retail+CoreDataClass.swift */; };
-		8DE8A8BD28B28F5900B898E1 /* Retail+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE8A8B728B28F5900B898E1 /* Retail+CoreDataProperties.swift */; };
-		8DE8A8BE28B28F5900B898E1 /* Customer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE8A8B828B28F5900B898E1 /* Customer+CoreDataClass.swift */; };
-		8DE8A8BF28B28F5900B898E1 /* Customer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE8A8B928B28F5900B898E1 /* Customer+CoreDataProperties.swift */; };
-		8DE8A8C028B28F5900B898E1 /* Invoice+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE8A8BA28B28F5900B898E1 /* Invoice+CoreDataClass.swift */; };
-		8DE8A8C128B28F5900B898E1 /* Invoice+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE8A8BB28B28F5900B898E1 /* Invoice+CoreDataProperties.swift */; };
+		8DE8A8E428B39AC000B898E1 /* Invoice+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE8A8E228B39AC000B898E1 /* Invoice+CoreDataClass.swift */; };
+		8DE8A8E528B39AC000B898E1 /* Invoice+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE8A8E328B39AC000B898E1 /* Invoice+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,12 +33,8 @@
 		8D736DA928B2712F0067E738 /* ModelV2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ModelV2.xcdatamodel; sourceTree = "<group>"; };
 		8D736DAA28B2712F0067E738 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		8DE8A8B528B28E9800B898E1 /* ModelV3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ModelV3.xcdatamodel; sourceTree = "<group>"; };
-		8DE8A8B628B28F5900B898E1 /* Retail+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Retail+CoreDataClass.swift"; sourceTree = "<group>"; };
-		8DE8A8B728B28F5900B898E1 /* Retail+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Retail+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		8DE8A8B828B28F5900B898E1 /* Customer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Customer+CoreDataClass.swift"; sourceTree = "<group>"; };
-		8DE8A8B928B28F5900B898E1 /* Customer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Customer+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		8DE8A8BA28B28F5900B898E1 /* Invoice+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Invoice+CoreDataClass.swift"; sourceTree = "<group>"; };
-		8DE8A8BB28B28F5900B898E1 /* Invoice+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Invoice+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8DE8A8E228B39AC000B898E1 /* Invoice+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Invoice+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8DE8A8E328B39AC000B898E1 /* Invoice+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Invoice+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +51,8 @@
 		8D158D3F28AF93E400EA4407 = {
 			isa = PBXGroup;
 			children = (
-				8DE8A8B628B28F5900B898E1 /* Retail+CoreDataClass.swift */,
-				8DE8A8B728B28F5900B898E1 /* Retail+CoreDataProperties.swift */,
-				8DE8A8B828B28F5900B898E1 /* Customer+CoreDataClass.swift */,
-				8DE8A8B928B28F5900B898E1 /* Customer+CoreDataProperties.swift */,
-				8DE8A8BA28B28F5900B898E1 /* Invoice+CoreDataClass.swift */,
-				8DE8A8BB28B28F5900B898E1 /* Invoice+CoreDataProperties.swift */,
+				8DE8A8E228B39AC000B898E1 /* Invoice+CoreDataClass.swift */,
+				8DE8A8E328B39AC000B898E1 /* Invoice+CoreDataProperties.swift */,
 				8D158D4A28AF93E400EA4407 /* swift-charts */,
 				8D158D4928AF93E400EA4407 /* Products */,
 			);
@@ -178,16 +166,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D36031428B08B8100FC5A7C /* RetailAPI.swift in Sources */,
-				8DE8A8BF28B28F5900B898E1 /* Customer+CoreDataProperties.swift in Sources */,
+				8DE8A8E428B39AC000B898E1 /* Invoice+CoreDataClass.swift in Sources */,
 				8D158D4E28AF93E400EA4407 /* ContentView.swift in Sources */,
-				8DE8A8BC28B28F5900B898E1 /* Retail+CoreDataClass.swift in Sources */,
-				8DE8A8BE28B28F5900B898E1 /* Customer+CoreDataClass.swift in Sources */,
 				8D4A86A328B219800061E5DC /* CoreDataStack.swift in Sources */,
-				8DE8A8C128B28F5900B898E1 /* Invoice+CoreDataProperties.swift in Sources */,
 				8D158D4C28AF93E400EA4407 /* swift_chartsApp.swift in Sources */,
 				8D4A869E28B0E1040061E5DC /* ChartView.swift in Sources */,
-				8DE8A8BD28B28F5900B898E1 /* Retail+CoreDataProperties.swift in Sources */,
-				8DE8A8C028B28F5900B898E1 /* Invoice+CoreDataClass.swift in Sources */,
+				8DE8A8E528B39AC000B898E1 /* Invoice+CoreDataProperties.swift in Sources */,
 				8D736DAB28B2712F0067E738 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,7 +309,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -355,7 +339,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -400,7 +384,7 @@
 				8D736DA928B2712F0067E738 /* ModelV2.xcdatamodel */,
 				8D736DAA28B2712F0067E738 /* Model.xcdatamodel */,
 			);
-			currentVersion = 8DE8A8B528B28E9800B898E1 /* ModelV3.xcdatamodel */;
+			currentVersion = 8D736DAA28B2712F0067E738 /* Model.xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

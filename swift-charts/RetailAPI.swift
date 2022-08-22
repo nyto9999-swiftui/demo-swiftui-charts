@@ -3,8 +3,8 @@ import Combine
 import CoreData
 import SwiftUI
 
+
 class RetailModel: ObservableObject {
-  @Environment(\.managedObjectContext) var moc
   var progress = PassthroughSubject<Void, Never>()
   
   let filename: String
@@ -20,91 +20,33 @@ class RetailModel: ObservableObject {
     
     for try await line in url.lines {
       
+      let moc = CoreDataStack.shared.context
+      
       let row = line.components(separatedBy: "\n")[0]
       let values = row.components(separatedBy: ",")
       
-      
       //todo : fix cols > 8
-      guard values.count == 8 else { return }
-      
-      let invoice = Invoice(context: moc)
-      let customer = Customer(context: moc)
-      let retail = Retail(context: moc)
-      //InvoiceNo,StockCode,Description,Quantity,InvoiceDate,UnitPrice,CustomerID,Country
-      
-      invoice.id = UUID()
-      invoice.invoiceNo = values[0]
-      invoice.date = values[4]
-      
-      customer.id = UUID()
-      customer.customerNo = values[6]
-      customer.country = values[7]
-      
-      retail.id = UUID()
-      retail.retailNo = values[1]
-      retail.desc = values[2]
-      retail.quantity = values[3]
-      retail.price = values[5]
-      
-      do {
-        try moc.save()
-      }
-      catch let error as NSError {
-        print("context error")
-        print("Unresolved error \(error), \(error.userInfo)")
-        return
-      }
-      
-      typealias mSet = NSMutableOrderedSet
-      //relationship
-      if let invoiceToCustomer = invoice.invoiceToCustomer?.mutableCopy() as? mSet,
-         let retails = invoice.retails as? mSet,
-         let customerToRetails = customer.customerToRetail?.mutableCopy() as? mSet
+      if values.count == 8
       {
-        invoiceToCustomer.add(customer)
-        invoice.addToRetails(retail)
+        let invoice = Invoice(context: moc)
+        invoice.invoiceNo = values[0]
+        invoice.retailNo = values[1]
+        invoice.desc = values[2]
+        invoice.quantity = values[3]
+        invoice.date = values[4]
+        invoice.price = values[5]
+        invoice.customerNo = values[6]
+        invoice.country = values[7]
         
-        
-        
-        
-      }
-      
-      
-      
-      
-      //
-      //      let invoice = Invoice(context: moc)
-      //      invoice.country = values[7]
-      //      invoice.customerID = values[6]
-      //      invoice.invoiceDate = values[4]
-      //      invoice.invoiceNo = values[0]
-      //
-      //      let retail = Retail(context: moc)
-      //      retail.stockCode = values[1]
-      //      retail.desc = values[2]
-      //      retail.quantity = values[3]
-      //      retail.unitPrice = values[5]
-      //
-      //      await MainActor.run {
-      //        try? moc.save()
-      //        if let retails = invoice.retails?.mutableCopy() as? NSMutableOrderedSet {
-      //          retails.add(invoice)
-      //        }
-      //        try? moc.save()
-      //      }
-      
-      
-      
-      await MainActor.run {
-        //        do {
-        ////          print(invoice)
-        ////          print(retail)
-        ////          try moc.save()
-        //        }
-        //        catch let error as NSError {
-        //        print("Unresolved error \(error), \(error.userInfo)")
-        //        }
-        self.progress.send()
+        await MainActor.run {
+          do {
+            try moc.save()
+            self.progress.send()
+          }
+          catch let error as NSError {
+            print("Unresolved error \(error), \(error.userInfo)")
+          }
+        }
       }
     }
   }

@@ -6,6 +6,8 @@ public class CoreDataStack {
   static let shared = CoreDataStack(model: "Model")
   
   private let modelName:String
+  var fetchRequest: NSFetchRequest<Invoice>?
+  var invoiceList: [Invoice] = []
   
   lazy var context: NSManagedObjectContext = {
     return self.storeContainer.viewContext
@@ -15,8 +17,9 @@ public class CoreDataStack {
     self.modelName = model
   }
    
-  private lazy var storeContainer: NSPersistentContainer = {
-    let container = NSPersistentContainer(name: self.modelName)
+  private var storeContainer: NSPersistentContainer = {
+    let container = NSPersistentContainer(name: "Model")
+    print(container.persistentStoreDescriptions.first?.url! ?? "")
     container.loadPersistentStores { _, error in
       if let error = error as NSError? {
         print("Unresolved error \(error), \(error.userInfo)")
