@@ -7,6 +7,7 @@ struct swift_chartsApp: App {
         WindowGroup {
           ContentView()
             .environment(\.managedObjectContext, coreData.context)
+          //test
         }
     }
 }
