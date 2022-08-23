@@ -47,7 +47,7 @@ class RetailModel: ObservableObject {
       }
     }
   }
-  
+  //
   //3 mins 51 sec
   func ayncStreamPull() async {
     var iterator = url.lines.makeAsyncIterator()
