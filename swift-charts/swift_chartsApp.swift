@@ -2,12 +2,13 @@ import SwiftUI
 
 @main
 struct swift_chartsApp: App {
-  let coreData = CoreDataStack.shared
+  
     var body: some Scene {
         WindowGroup {
-          ContentView()
-            .environment(\.managedObjectContext, coreData.context)
-          //test
+          let _ = UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+          let coreData = CoreDataStack.shared
+          ChartView()
+            .environment(\.managedObjectContext, coreData.viewContext)
         }
     }
 }

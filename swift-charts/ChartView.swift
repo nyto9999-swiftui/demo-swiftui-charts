@@ -3,17 +3,17 @@ import CoreData
 import Combine
 
 struct ChartView: View {
-  @StateObject private var model = RetailModel(filename: "online-retail")
+  @StateObject private var model = RetailModel(filename: "test")
   @State private var downloadAmount = 0.0
-  @Environment(\.managedObjectContext) var moc
-//  @FetchRequest(entity: Invoice.entity(), sortDescriptors: []) var invoices: FetchedResults<Invoice>
-  private var invoiceCount = CoreDataStack.shared.invoicesCount()
   @State private var displayChart = true
+  private var invoiceCount = CoreDataStack.shared.invoicesCount()
    
   var body: some View {
-    VStack(alignment: .center) {
+    VStack {
       if displayChart {
-        Text("I am chart")
+        VStack {
+          PieChart()
+        }
       }
       else {
         Text("Downloading… \(lround(downloadAmount))/541910")
