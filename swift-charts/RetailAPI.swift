@@ -47,9 +47,7 @@ class RetailModel: ObservableObject {
       }
     }
   }
-  func test() {
-    print("invoices.count")
-  }
+  
   //3 mins 51 sec
   func ayncStreamPull() async {
     var iterator = url.lines.makeAsyncIterator()
