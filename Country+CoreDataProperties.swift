@@ -2,7 +2,7 @@
 //  Country+CoreDataProperties.swift
 //  swift-charts
 //
-//  Created by 宇宣 Chen on 2022/8/23.
+//  Created by 宇宣 Chen on 2022/8/24.
 //
 //
 
@@ -17,29 +17,27 @@ extension Country {
   }
   
   @NSManaged public var name: String?
-  @NSManaged public var countryToInvoice: Set<Invoice>?
-  
-  public var invoice: [Invoice] {
-    let setOfInvoice = countryToInvoice
-    return setOfInvoice!.sorted { $0.invoiceNo! > $1.invoiceNo! }
+  @NSManaged public var countryToRetail: Set<Retail>?
+  public var retails: [Retail] {
+    let setOfInvoice = countryToRetail
+    return setOfInvoice!.sorted { $0.retailNo! > $1.retailNo! }
   }
-  
 }
 
-// MARK: Generated accessors for countryToInvoice
+// MARK: Generated accessors for countryToRetail
 extension Country {
   
-  @objc(addCountryToInvoiceObject:)
-  @NSManaged public func addToCountryToInvoice(_ value: Invoice)
+  @objc(addCountryToRetailObject:)
+  @NSManaged public func addToCountryToRetail(_ value: Retail)
   
-  @objc(removeCountryToInvoiceObject:)
-  @NSManaged public func removeFromCountryToInvoice(_ value: Invoice)
+  @objc(removeCountryToRetailObject:)
+  @NSManaged public func removeFromCountryToRetail(_ value: Retail)
   
-  @objc(addCountryToInvoice:)
-  @NSManaged public func addToCountryToInvoice(_ values: NSSet)
+  @objc(addCountryToRetail:)
+  @NSManaged public func addToCountryToRetail(_ values: NSSet)
   
-  @objc(removeCountryToInvoice:)
-  @NSManaged public func removeFromCountryToInvoice(_ values: NSSet)
+  @objc(removeCountryToRetail:)
+  @NSManaged public func removeFromCountryToRetail(_ values: NSSet)
   
 }
 

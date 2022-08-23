@@ -2,25 +2,23 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21G83" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Country" representedClassName=".Country" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="countryToInvoice" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Invoice" inverseName="invoiceToCountry" inverseEntity="Invoice"/>
+        <relationship name="countryToRetail" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Retail" inverseName="retailToCountry" inverseEntity="Retail"/>
     </entity>
     <entity name="Invoice" representedClassName=".Invoice" syncable="YES">
         <attribute name="customerNo" attributeType="String" defaultValueString=""/>
         <attribute name="date" attributeType="String" defaultValueString=""/>
         <attribute name="invoiceNo" attributeType="String" defaultValueString=""/>
-        <relationship name="invoiceToCountry" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Country" inverseName="countryToInvoice" inverseEntity="Country"/>
-        <relationship name="invoicToRetail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Retail" inverseName="retailToInvoice" inverseEntity="Retail"/>
     </entity>
     <entity name="Retail" representedClassName=".Retail" syncable="YES">
         <attribute name="desc" optional="YES" attributeType="String"/>
-        <attribute name="price" optional="YES" attributeType="String"/>
-        <attribute name="quantity" optional="YES" attributeType="String"/>
+        <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="quantity" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="retailNo" optional="YES" attributeType="String"/>
-        <relationship name="retailToInvoice" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Invoice" inverseName="invoicToRetail" inverseEntity="Invoice"/>
+        <relationship name="retailToCountry" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Country" inverseName="countryToRetail" inverseEntity="Country"/>
     </entity>
     <elements>
-        <element name="Country" positionX="-336.6171875" positionY="194.60546875" width="128" height="73"/>
-        <element name="Invoice" positionX="67.546875" positionY="78.03125" width="128" height="118"/>
-        <element name="Retail" positionX="-135" positionY="162" width="128" height="104"/>
+        <element name="Retail" positionX="1001.48046875" positionY="173.30859375" width="128" height="118"/>
+        <element name="Invoice" positionX="557.06640625" positionY="26.109375" width="128" height="88"/>
+        <element name="Country" positionX="61.26171875" positionY="200.0859375" width="128" height="73"/>
     </elements>
 </model>
