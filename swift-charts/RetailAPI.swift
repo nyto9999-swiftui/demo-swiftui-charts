@@ -16,7 +16,7 @@ class RetailModel: ObservableObject {
     self.url = Bundle.main.url(forResource: filename, withExtension: "csv")!
   }
   
-  // 4 min 51 sec
+  // 4 min 51 secs
   func ayncSequence() async throws {
     for try await line in url.lines {
       let row = line.components(separatedBy: "\n")[0]
